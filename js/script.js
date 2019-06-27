@@ -13,4 +13,4 @@ let period = 'Week';
 
 alert(period);
 
-console.log('Mission Complete');
+console.log('Mission Complete!!');
