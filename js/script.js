@@ -15,6 +15,5 @@ let period = 5;
 console.log(typeof period);
 let budgetDay = (4000 / 30);
 console.log(budgetDay);
-
-
+console.log(budgetDay % 30);
 
