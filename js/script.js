@@ -20,6 +20,6 @@ console.log(addExpenses.toLowerCase());
 console.log('Goal to earn:', mission);
 console.log('Month period: ', period);
 console.log('day budget:', budgetDay);
-console.log('remainder:', budgetDay % 30);
+console.log('remainder:', money % 30);
 
 
