@@ -17,3 +17,4 @@ let budgetDay = (4000 / 30);
 console.log(budgetDay);
 console.log(budgetDay % 30);
 
+
