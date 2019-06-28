@@ -1,20 +1,25 @@
-let money = 4000;
-console.log(typeof money);
-let income = '200 euro';
-console.log(income.length);
-console.log(typeof income);
-let addExpenses = 'Taxi, Food, Coffee';
-let mass = addExpenses.split(', ');
+let money = 4000,
+  income = 'Freelance',
+  addExpenses = 'Taxi, Food, Coffee',
+  mass = addExpenses.split(', '),
+  deposit = true,
+  mission = 15000,
+  period = 5;
+let budgetDay = money / 30;
+
 console.log(mass);
+console.log(typeof (money));
+console.log(typeof (income));
+console.log(typeof (deposit));
+
+console.log(income.length);
+
+
 console.log(addExpenses.toLowerCase());
-let deposit = true;
-console.log(typeof deposit);
-let mission = 15000;
-console.log(typeof mission);
-let period = 5;
-console.log(typeof period);
-let budgetDay = (4000 / 30);
-console.log(budgetDay);
-console.log(budgetDay % 30);
+
+console.log('Goal to earn:', mission);
+console.log('Month period: ', period);
+console.log('day budget:', budgetDay);
+console.log('remainder:', budgetDay % 30);
 
 
