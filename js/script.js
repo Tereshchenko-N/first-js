@@ -1,16 +1,20 @@
-let money = 100;
-//console.log(money);
-let income = 200;
-//console.log(income);
-let addExpenses = 50;
-//console.log(addExpenses);
-let deposit = 150;
-//console.log(deposit);
-let mission = 500;
-//console.log(mission);
-let period = 'Week';
-//console.log(period);
+let money = 4000;
+console.log(typeof money);
+let income = '200 euro';
+console.log(income.length);
+console.log(typeof income);
+let addExpenses = 'Taxi, Food, Coffee';
+let mass = addExpenses.split(', ');
+console.log(mass);
+console.log(addExpenses.toLowerCase());
+let deposit = true;
+console.log(typeof deposit);
+let mission = 15000;
+console.log(typeof mission);
+let period = 5;
+console.log(typeof period);
+let budgetDay = (4000 / 30);
+console.log(budgetDay);
 
-alert(period);
 
-console.log('Mission Complete!!');
+
