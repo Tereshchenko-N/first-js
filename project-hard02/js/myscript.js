@@ -6,5 +6,5 @@ let num = 266219,
 
 
 console.log(sum);
-console.log((result).slice(0 ,2));
+console.log((result).slice(0, 2).join(''));
 
