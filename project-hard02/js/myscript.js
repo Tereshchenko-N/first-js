@@ -1,0 +1,12 @@
+let num = 266219,
+  sum = 2 * 6 * 6 * 2 * 1 * 9,
+  myNum = sum ** 3,
+  result = myNum.toString().split('');
+
+
+console.log(num);
+console.log(sum);
+console.log(myNum); 
+console.log(result);
+alert((result).slice(0 ,2));
+
