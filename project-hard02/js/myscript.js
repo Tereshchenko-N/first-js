@@ -4,9 +4,7 @@ let num = 266219,
   result = myNum.toString().split('');
 
 
-console.log(num);
+
 console.log(sum);
-console.log(myNum); 
-console.log(result);
-alert((result).slice(0 ,2));
+console.log((result).slice(0 ,2));
 
