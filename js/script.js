@@ -17,14 +17,14 @@ console.log(typeof (income));
 console.log(typeof (deposit));
   
 console.log('Месячный бюджет:', budgetMonth);
-console.log('Период месяцев для выполнения цели:', parseInt(period));
-console.log('Дневной бюджет:', Math.ceil(budgetDay));
+console.log('Период месяцев для выполнения цели:', Math.ceil(period));
+console.log('Дневной бюджет:', Math.floor(budgetDay));
 
 if (budgetDay >= 800) {
   console.log('Высокий уровень дохода');
-} else if (budgetDay >= 300) {
+} else if (budgetDay >= 300 && budgetDay < 800) {
   console.log('Средний уровень дохода');
-} else if (budgetDay >= 0) {
+} else if (budgetDay >= 0 && budgetDay < 300) {
   console.log('Низкий уровень дохода');
 } else {
   console.log('Что-то пошло не так.');
