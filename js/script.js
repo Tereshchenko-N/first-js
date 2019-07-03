@@ -41,13 +41,12 @@ function getStatusIncome(){
   }
 }
 let getExpensesMonth = function() {
-   return (moneyExpenses + moneyExpenses2);
+   return moneyExpenses + moneyExpenses2;
 };
 
-//let expensesAmount = getExpensesMonth();
 
 let getAccumulatedMonth = function() {
-   return (money - getExpensesMonth());
+   return money - getExpensesMonth();
 };
 
 let accumulatedMonth = getAccumulatedMonth();
@@ -60,7 +59,6 @@ let moneyforPeriod = function() {
    return getAccumulatedMonth() * budgetPeriod();
 };
 
-
 console.log('getStatusIncome(): ', getStatusIncome());
 console.log('Накопления за период: ', moneyforPeriod());
-console.log('Срок достижения цели: ', (getTargetMonth()));
+console.log('Срок достижения цели: ', getTargetMonth());
