@@ -36,7 +36,10 @@ function getExpensesMonth() {
 }
 console.log(getExpensesMonth());
 
+function getAccumulatedMonth() {
 
+
+}
 
 // let getExpensesMonth = function (moneyExpenses, moneyExpenses2) {
 //   return moneyExpenses + moneyExpenses2;

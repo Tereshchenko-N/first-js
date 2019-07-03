@@ -25,6 +25,30 @@ switch (lang) {
 }
 
 
+
+let lang1 = { 
+  ru: ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'] ,
+  en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+};
+lang1[lang];
+console.log(lang);
+
+
+let namePerson = prompt('Укажите Ваше имя');
+
+
+if (namePerson === 'Артем') {
+  console.log('директор');
+} else if (namePerson === 'Максим') {
+  console.log('преподаватель');
+} else {
+  console.log('студент');
+}
+
+
+
+
+
 // let russian = {
 //    1: ['Понедельник'],
 //    2: ['Вторник'],
@@ -52,33 +76,10 @@ switch (lang) {
 //   console.log(english);
 // }
 
-
-
-
-let lang1 = { 
-  ru: ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье'] ,
-  en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-};
-lang1[lang];
-console.log(lang.split(','));
 // let ru = new Array('Понедельник,Вторник,Среда,Четверг,Пятница,Суббота,Воскресенье');
 // let en = new Array('Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday');
 //'Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday'
 //'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'
 //'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
-
-
-let namePerson = prompt('Укажите Ваше имя');
-
-
-if (namePerson === 'Артем') {
-  console.log('директор');
-} else if (namePerson === 'Максим') {
-  console.log('преподаватель');
-} else {
-  console.log('студент');
-}
-
-
 
 
