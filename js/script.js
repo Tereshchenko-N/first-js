@@ -1,3 +1,4 @@
+'use strict';
 let money = +prompt ('Ваш месячный доход?'),
   income = 'Freelance',
   addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'),
@@ -32,24 +33,23 @@ function getStatusIncome(){
     return('Что-то пошло не так.');
   }
 }
-
-function getExpensesMonth() {
+let getExpensesMonth = function() {
  return(moneyExpenses + moneyExpenses2);
-}
+};
 
-function getAccumulatedMonth() {
+let getAccumulatedMonth = function() {
  return (money - (getExpensesMonth()));
-}
+};
 
 let accumulatedMonth = getAccumulatedMonth();
 
-function getTargetMonth() {
+let getTargetMonth = function() {
   return (mission / accumulatedMonth);
-}
+};
 
-function moneyforPeriod(){
+let moneyforPeriod = function() {
   return ((getTargetMonth() * (getAccumulatedMonth())));
-}
+};
 
 console.log('getStatusIncome(): ', getStatusIncome());
 console.log('Накопления за период: ', moneyforPeriod());
