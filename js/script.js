@@ -31,6 +31,11 @@ if (budgetDay >= 800) {
 }
 
 
+function getExpensesMonth() {
+ return(moneyExpenses + moneyExpenses2);
+}
+console.log(getExpensesMonth());
+
 
 
 // let getExpensesMonth = function (moneyExpenses, moneyExpenses2) {
