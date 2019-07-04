@@ -9,11 +9,10 @@ let money,
 let start = function() {
     do {
      money = prompt('Ваш месячный доход?');
-      money = +money;
-      console.log(money);
    }
    while (isNaN(money) || money == '' || money == null);
-  
+  money = +money;
+  console.log(money);
 };
 start();
 
