@@ -6,11 +6,10 @@ let money,
   mission = 100000,
   monthExpenses,
   monthExpenses2;
-  
 let start = function() {
     do {
      money = prompt('Ваш месячный доход?');
-     console.log(money);
+     console.log(+ money);
    }
    while (isNaN(money) || money == '' || money == null);
   
@@ -91,7 +90,7 @@ let moneyforPeriod = function() {
 };
 
 console.log('getStatusIncome(): ', getStatusIncome());
-console.log('Накопления за период: ', moneyforPeriod());
+console.log('Накопления за период: ', accumulatedMonth);
 
 
 if (getTargetMonth() >= 0){
