@@ -7,9 +7,6 @@ let myNameFunc = function(yourName) {
     } else {
       alert('Некорректные данные');
     }
-  if (yourName.length > 10){
-    yourName.slice(0 , 10);
-  }
 };
 
 myNameFunc();
