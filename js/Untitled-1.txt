@@ -1,0 +1,18 @@
+getExpensesMonth : function() {
+   let sum = 0;
+
+   for (let i = 0; i < 2; i++) {
+     if(i === 0){
+       monthExpenses = prompt('Какие обязательные ежемесячные расходы у вас есть?');
+     } else if (i === 1) {
+       monthExpenses2 = prompt('Какие обязательные ежемесячные расходы у вас есть?');
+     }
+
+    do {
+     sum = prompt('Во сколько это обойдется?');
+    }
+     while (isNaN(sum) || sum == '' || sum == null);
+    }
+
+   return sum;
+},
