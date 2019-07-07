@@ -27,7 +27,7 @@ let appData = {
      appData.addExpenses = addExpenses.toLowerCase().split(',');
      appData.deposit = confirm('Есть ли у вас депозит в банке?');
     
-     appData.getExpensesMonth = function () {
+     
      for (let i = 0; i < 2; i++) {
       let monthExpenses;
       let sum;
@@ -43,7 +43,9 @@ let appData = {
       while (isNaN(sum) || sum == '' || sum == null);
       
       appData.expenses[monthExpenses] = sum; 
-    }};
+      
+  
+  }
     }, 
     
 
