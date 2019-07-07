@@ -71,7 +71,12 @@ let appData = {
     return('Что-то пошло не так.');
   }
 }
+
 };
+
+for(let key in appData) {
+  console.log('Наша программа включает в себя данные: '+key);
+}
 
 
 appData.asking();
@@ -90,7 +95,7 @@ let getTargetMonth = function() {
    
 };
 if (getTargetMonth() >= 0){
-  console.log('Срок достижения цели: ', getTargetMonth());
+  console.log('Срок достижения цели: ', getTargetMonth(), 'месяца');
 } else if (getTargetMonth() <= -1) {
   console.log('Цель не будет достигнута');
 }
@@ -99,6 +104,6 @@ let moneyforPeriod = function() {
    return appData.getBudget() * budgetPeriod();
 };
 
-console.log('getStatusIncome(): ', appData.getStatusIncome());
-console.log('Накопления за месяц: ', accumulatedMonth);
+console.log('Уровень Дохода: ', appData.getStatusIncome());
+console.log('Расходы за месяц: ', appData.expensesMonth);
 
