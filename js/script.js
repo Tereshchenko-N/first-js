@@ -18,6 +18,7 @@ let appData = {
   misson: 100000,
   period: 3,
   budget: money,
+  expenses: {},
   budgetDay: 0,
   budgetMonth: 0,
   expensesMonth: 0,
@@ -25,29 +26,32 @@ let appData = {
  let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
      appData.addExpenses = addExpenses.toLowerCase().split(',');
      appData.deposit = confirm('Есть ли у вас депозит в банке?');
-    for (let i = 0; i < 2; i++) {
+    
+     appData.getExpensesMonth = function () {
+     for (let i = 0; i < 2; i++) {
       let monthExpenses;
       let sum;
 
       do {
-        monthExpenses = prompt('Какие обязательные ежемесячные расходы у вас есть?');
+        monthExpenses = prompt('Какие обязательные ежемесячные расходы у вас есть?', 'Coffee');
       }
       while (Number(monthExpenses) || monthExpenses == '' || monthExpenses == null);
 
       do {
-        sum = prompt('Во сколько это обойдется?');
+        sum = prompt('Во сколько это обойдется?', 2500);
       }
       while (isNaN(sum) || sum == '' || sum == null);
+      
+      appData.expenses[monthExpenses] = sum; 
+    }};
+    }, 
+    
 
-      appData.expenses[monthExpenses] = sum;
-    }
-
-    },
   getAccumulatedMonth: function() {
    return money - appData.expenses;
 },
   getTargetMonth: function() {
-   return Math.ceil(appData.mission / accumulatedMonth);
+   return Math.ceil(appData.mission / appData.getAccumulatedMonth());
    
 }, 
   getStatusIncome: function() {
@@ -62,8 +66,12 @@ let appData = {
   }
 }
 };
+appData.asking();
+appData.getExpensesMonth();
 
-let expensesAmount = appData.expenses;
+
+
+let expensesAmount = appData.getExpensesMonth();
   
 let budgetMonth = function() {
   return money - expensesAmount;
@@ -84,6 +92,7 @@ let moneyforPeriod = function() {
    return appData.getAccumulatedMonth() * budgetPeriod();
 };
 
+
 console.log('getStatusIncome(): ', appData.getStatusIncome());
 console.log('Накопления за период: ', accumulatedMonth);
 
@@ -93,3 +102,4 @@ if (appData.getTargetMonth() >= 0){
 } else if (appData.getTargetMonth() <= -1) {
   console.log('Цель не будет достигнута');
 }
+
