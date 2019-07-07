@@ -43,10 +43,11 @@ let appData = {
       while (isNaN(sum) || sum == '' || sum == null);
       
       appData.expenses[monthExpenses] = sum; 
-      
-  
+
   }
     }, 
+  
+
     
 
   getAccumulatedMonth: function() {
@@ -70,10 +71,10 @@ let appData = {
 };
 appData.asking();
 appData.getExpensesMonth();
+appData.getTargetMonth();
 
 
-
-let expensesAmount = appData.getExpensesMonth();
+let expensesAmount = appData.expenses;
   
 let budgetMonth = function() {
   return money - expensesAmount;

@@ -16,3 +16,22 @@ getExpensesMonth : function() {
 
    return sum;
 },
+
+
+for (let i = 0; i < 2; i++) {
+      let monthExpenses;
+      let sum;
+
+      do {
+        monthExpenses = prompt('Какие обязательные ежемесячные расходы у вас есть?', 'Coffee');
+      }
+      while (Number(monthExpenses) || monthExpenses == '' || monthExpenses == null);
+
+      do {
+        sum = prompt('Во сколько это обойдется?', 2500);
+      }
+      while (isNaN(sum) || sum == '' || sum == null);
+      
+      appData.expenses[monthExpenses] = sum; 
+
+  }
