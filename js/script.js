@@ -10,7 +10,7 @@ let start = function () {
 start();
 
 let appData = {
-  icome: {},
+  income: [],
   addIncome: [],
   expenses: [],
   addExpenses: [],
@@ -22,15 +22,21 @@ let appData = {
   budget: money,
   budgetDay: 0,
   budgetMonth: 0,
-  expensesMonth: 0,
+  expensesMonth: 0, 
   asking: function() {
       
-        //addExpenses = addExpenses[0].toUpperCase() + addExpenses.slice(1);
+        let expResult;
         let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую',
           'кофе,чай,шоколадки');
-          appData.addExpenses = addExpenses.replace(/(\s|^)[а-яА-Я0-9]{1}/g, l => l.toUpperCase());
+          appData.addExpenses = addExpenses.split(',');
           
-        
+         
+
+        for(let key in appData.addExpenses) {
+          expResult = appData.addExpenses[key].charAt(0).toUpperCase() + appData.addExpenses[key].slice(1);
+          appData.addExpenses.push(expResult);
+          
+        }
         for (let i = 0; i < 2; i++) {
           let monthExpenses;
           let sum;
@@ -149,6 +155,5 @@ let moneyforPeriod = function() {
 console.log('Уровень Дохода: ', appData.getStatusIncome());
 console.log('Расходы за месяц: ', appData.expensesMonth);
 
-  
-console.log(appData.calcSavedMoney(), appData.moneyDeposit, appData.percentDeposit);
-console.log(appData.addExpenses.split(','));
+
+console.log(appData.addExpenses.splice(3, 6));
