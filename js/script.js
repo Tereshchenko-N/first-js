@@ -6,7 +6,6 @@ let start = function () {
   }
   while (isNaN(money) || money == '' || money == null);
   money = +money;
-  console.log(money);
 };
 start();
 
@@ -46,8 +45,8 @@ let appData = {
 
     getExpensesMonth: function() {
     for (let key in appData.expenses) {
-      appData.expensesMonth = appData.expenses[key] + appData.expenses[key];
-      // console.log(appData.expenses[key]);
+      appData.expensesMonth = +appData.expenses[key];
+     
     }
 }, 
    getBudget: function() {
