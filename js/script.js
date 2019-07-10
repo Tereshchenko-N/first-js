@@ -156,4 +156,4 @@ console.log('Уровень Дохода: ', appData.getStatusIncome());
 console.log('Расходы за месяц: ', appData.expensesMonth);
 
 
-console.log(appData.addExpenses.splice(3, 6));
+console.log(appData.addExpenses.splice(3, 6).join(', '));
