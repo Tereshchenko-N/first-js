@@ -33,6 +33,7 @@ let appData = {
          
 
         for(let key in appData.addExpenses) {
+          appData.addExpenses[key] = appData.addExpenses[key].trim();
           expResult = appData.addExpenses[key].charAt(0).toUpperCase() + appData.addExpenses[key].slice(1);
           appData.addExpenses.push(expResult);
           
