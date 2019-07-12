@@ -1,6 +1,31 @@
 'use strict';
 let money;
-let start = function () {
+
+
+let start = document.getElementById('start'),
+  btnPlus = document.getElementsByTagName('button'),
+  btnIncome = btnPlus[0],
+  btnExpenses = btnPlus[1],
+  checkBox = document.querySelector('#deposit-check'),
+  inputExpenses = document.querySelectorAll('additional_income-item'),
+  budgetMonth = document.getElementsByClassName('budget_month-value')[0],
+  budgetDay = document.getElementsByClassName('budget_day-value')[0],
+  expMonth = document.getElementsByClassName('expenses_month-value')[0],
+  additionalIncome = document.getElementsByClassName('additional_income-value')[0],
+  additionalExpenses = document.getElementsByClassName('additional_expenses-value')[0],
+  incomePeriod = document.getElementsByClassName('income_period-value')[0],
+  targetMonth = document.getElementsByClassName('target_month-value')[0],
+  salaryAmount = document.querySelector('.salary-amount'),
+  incomeTitle = document.querySelector('.income-title'),
+  incomeAmount = document.querySelector('.income-amount'),
+  additionalIncomeItem = document.querySelector('.additional_income-item'),
+  expensesTitle = document.querySelector('.expenses-title'),
+  expensesAmount = document.querySelector('.expenses-amount'),
+  additionalExpensesItem = document.querySelector('.additional_expenses-item'),
+  targetAmount = document.querySelector('.target-amount'),
+  periodSelect = document.querySelector('.period-select');
+  
+  start = function () {
   do {
     money = prompt('Ваш месячный доход?', 50000);
   }
@@ -123,9 +148,9 @@ let appData = {
 
 };
 
-for(let key in appData) {
-  console.log('Наша программа включает в себя данные: '+key);
-}
+// for(let key in appData) {
+//   console.log('Наша программа включает в себя данные: '+key);
+// }
 
 
 appData.asking();
