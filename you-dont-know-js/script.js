@@ -28,32 +28,19 @@ let body = document.querySelector('body');
 let removeAdv = document.querySelector('.adv');
 body.removeChild(removeAdv);
 
-
+let list = document.querySelectorAll('ul');
 let listItem = document.querySelectorAll('li');
-elem[0].classList.add('second');
-elem[5].classList.add('fifth');
-
-let secondElem = document.querySelector('.second');
-let fifthElem = document.querySelector('.fifth');
 
 
+list[1].insertBefore(listItem[8],listItem[15]);
+list[1].insertBefore(listItem[12], listItem[10]);
+list[1].insertBefore(listItem[14], listItem[10]);
+list[1].insertBefore(listItem[15], listItem[8]);
 
-secondElem.appendChild(listItem[8]);
-secondElem.appendChild(listItem[10]);
-secondElem.appendChild(listItem[11]);
-secondElem.appendChild(listItem[13]);
-secondElem.appendChild(listItem[15]);
-secondElem.appendChild(listItem[8]);
-secondElem.appendChild(listItem[16]);
+list[4].insertBefore(listItem[45], listItem[38]);
+list[4].insertBefore(listItem[39], listItem[38]);
+list[4].insertBefore(listItem[40], listItem[38]);
+list[4].insertBefore(listItem[41], listItem[44]);
 
-fifthElem.appendChild(listItem[36]);
-fifthElem.appendChild(listItem[37]);
-fifthElem.appendChild(listItem[45]);
-fifthElem.appendChild(listItem[39]);
-fifthElem.appendChild(listItem[40]);
-fifthElem.appendChild(listItem[38]);
-fifthElem.appendChild(listItem[42]);
-fifthElem.appendChild(listItem[43]);
-fifthElem.appendChild(listItem[41]);
-fifthElem.appendChild(listItem[44]);
-fifthElem.appendChild(listItem[46]);
+console.log(list[4]);
+console.log(listItem[45]);
