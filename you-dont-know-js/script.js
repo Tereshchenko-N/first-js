@@ -41,3 +41,7 @@ list[4].insertBefore(listItem[45], listItem[38]);
 list[4].insertBefore(listItem[39], listItem[38]);
 list[4].insertBefore(listItem[40], listItem[38]);
 list[4].insertBefore(listItem[41], listItem[44]);
+
+let newElem = document.createElement('li');
+newElem.textContent = 'Глава 8: За пределами ES6';
+list[5].insertBefore(newElem, listItem[56]);
