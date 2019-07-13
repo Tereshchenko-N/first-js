@@ -41,6 +41,3 @@ list[4].insertBefore(listItem[45], listItem[38]);
 list[4].insertBefore(listItem[39], listItem[38]);
 list[4].insertBefore(listItem[40], listItem[38]);
 list[4].insertBefore(listItem[41], listItem[44]);
-
-console.log(list[4]);
-console.log(listItem[45]);
