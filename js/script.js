@@ -1,12 +1,11 @@
 'use strict';
 
 let start = document.getElementById('start'),
-  cancel = document.getElementById('.cancel'),
+  cancel = document.getElementById('cancel'),
   btnPlus = document.getElementsByTagName('button'),
   btnIncome = btnPlus[0],
   btnExpenses = btnPlus[1],
   checkBox = document.querySelector('#deposit-check'),
-  //inputExpenses = document.querySelectorAll('additional_income-item'),
   budgetMonth = document.getElementsByClassName('budget_month-value')[0],
   budgetDay = document.getElementsByClassName('budget_day-value')[0],
   expMonth = document.getElementsByClassName('expenses_month-value')[0],
@@ -15,16 +14,18 @@ let start = document.getElementById('start'),
   incomePeriod = document.getElementsByClassName('income_period-value')[0],
   targetMonth = document.getElementsByClassName('target_month-value')[0],
   salaryAmount = document.querySelector('.salary-amount'),
-  incomeTitle = document.querySelector('.income-title'),
+  incomeTitle = document.getElementsByClassName('income-title')[1],
   incomeAmount = document.querySelector('.income-amount'),
-  additionalIncomeItem = document.querySelector('.additional_income-item'),
-  expensesTitle = document.querySelector('.expenses-title'),
+  additionalIncomeItem = document.querySelectorAll('.additional_income-item'),
+  expensesTitle = document.getElementsByClassName('expenses-title')[1],
   expensesItems = document.querySelectorAll('.expenses-items'),
   additionalExpensesItem = document.querySelector('.additional_expenses-item'),
   targetAmount = document.querySelector('.target-amount'),
   periodSelect = document.querySelector('.period-select'),
-  incomeItem = document.querySelectorAll('.income-items');
-
+  incomeItem = document.querySelectorAll('.income-items'),
+  periodAmount = document.querySelector('.period-amount'),
+  expensesAmount = document.querySelector('.expenses-amount');
+ 
 
 let appData = {
   income: [],
@@ -46,6 +47,19 @@ let appData = {
       start.removeEventListener('click', appData.start);
       return;
     } 
+    start.setAttribute('style', 'display: none');
+    cancel.setAttribute('style', 'display: block');
+    
+    salaryAmount.setAttribute('disabled', 'disabled');
+    incomeAmount.setAttribute('disabled', 'disabled');
+    additionalIncomeItem[0].setAttribute('disabled', 'disabled');
+    additionalIncomeItem[1].setAttribute('disabled', 'disabled');
+    expensesAmount.setAttribute('disabled', 'disabled');
+    additionalExpensesItem.setAttribute('disabled', 'disabled');
+    targetAmount.setAttribute('disabled', 'disabled');
+    expensesTitle.setAttribute('disabled', 'disabled');
+    incomeTitle.setAttribute('disabled', 'disabled');
+    
     appData.budget = +salaryAmount.value;
 
 
@@ -54,7 +68,7 @@ let appData = {
     appData.getExpensesMonth();
     appData.getInfoDeposit();
     appData.getAddExpenses();
-    appData.getAddIncome();  // выдает ошибку 
+    appData.getAddIncome(); 
     appData.getBudget();
 
     appData.showResult();
@@ -65,7 +79,7 @@ showResult: function(){
   budgetDay.value = appData.budgetDay;
   expMonth.value = appData.expensesMonth;
   additionalExpenses.value = appData.addExpenses.join(', ');
-  additionalIncome.value = appData.addIncome.join(', ');   // выдает ошибку
+  additionalIncome.value = appData.addIncome.join(', ');  
   targetMonth.value = Math.ceil(appData.getTargetMonth());
   incomePeriod.value = appData.calcSavedMoney();
   incomeItem.value = appData.getIncome();
@@ -124,8 +138,6 @@ getAddExpenses: function() {
   });
 },
 
-
-// проблема, выдает ошибку
 
 getAddIncome: function() {
   additionalIncomeItem.forEach(function(item){
@@ -197,26 +209,11 @@ getAddIncome: function() {
 
   calcSavedMoney: function() {
     return appData.budgetMonth * periodSelect.value;
-  }
-
+  },
+ 
 };
 
-
-//замена кнопки рассчитать 
-
-let count = 0;
-
-let clicked = function(){
-  count++;
-  if(count === 1) {
-    //start.removeEventListener('click', clicked);
-    start.style.display = 'none';
-    cancel.style.display = 'block';
-  } 
-};
 start.addEventListener('click', appData.start);
-
-
 
 btnExpenses.addEventListener('click', appData.addExpensesBlock);
 btnIncome.addEventListener('click', appData.addIncomeBlock);
