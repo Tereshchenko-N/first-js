@@ -10,32 +10,20 @@ let start = document.getElementById('start'),
   budgetMonth = document.getElementsByClassName('budget_month-value')[0],
   budgetDay = document.getElementsByClassName('budget_day-value')[0],
   expMonth = document.getElementsByClassName('expenses_month-value')[0],
-
   additionalIncome = document.getElementsByClassName('additional_income-value')[0],
-
   additionalExpenses = document.getElementsByClassName('additional_expenses-value')[0],
   incomePeriod = document.getElementsByClassName('income_period-value')[0],
-
   targetMonth = document.getElementsByClassName('target_month-value')[0],
-
   salaryAmount = document.querySelector('.salary-amount'),
   incomeTitle = document.querySelector('.income-title'),
   incomeAmount = document.querySelector('.income-amount'),
-
   additionalIncomeItem = document.querySelector('.additional_income-item'),
-
   expensesTitle = document.querySelector('.expenses-title'),
   expensesItems = document.querySelectorAll('.expenses-items'),
   additionalExpensesItem = document.querySelector('.additional_expenses-item'),
-
   targetAmount = document.querySelector('.target-amount'),
-
   periodSelect = document.querySelector('.period-select'),
-  
   incomeItem = document.querySelectorAll('.income-items');
-
-  
- 
 
 
 let appData = {
@@ -60,15 +48,13 @@ let appData = {
     } 
     appData.budget = +salaryAmount.value;
 
-    
-    
 
     appData.getExpenses();
     appData.getIncome(); 
     appData.getExpensesMonth();
     appData.getInfoDeposit();
     appData.getAddExpenses();
-    //appData.getAddIncome();
+    appData.getAddIncome();  // выдает ошибку 
     appData.getBudget();
 
     appData.showResult();
@@ -79,7 +65,7 @@ showResult: function(){
   budgetDay.value = appData.budgetDay;
   expMonth.value = appData.expensesMonth;
   additionalExpenses.value = appData.addExpenses.join(', ');
-  //additionalIncome.value = appData.addIncome.join(', ');
+  additionalIncome.value = appData.addIncome.join(', ');   // выдает ошибку
   targetMonth.value = Math.ceil(appData.getTargetMonth());
   incomePeriod.value = appData.calcSavedMoney();
   incomeItem.value = appData.getIncome();
@@ -138,14 +124,19 @@ getAddExpenses: function() {
   });
 },
 
-// getAddIncome: function() {
-//   additionalIncomeItem.forEach(function(item){
-//     let itemValue = item.value.trim();
-//     if(itemValue !== ''){
-//       appData.addIncome.push(itemValue);
-//     }
-//   });
-// }, 
+
+// проблема, выдает ошибку
+
+getAddIncome: function() {
+  additionalIncomeItem.forEach(function(item){
+    let itemValue = item.value.trim();
+    if(itemValue !== ''){
+      appData.addIncome.push(itemValue);
+    }
+  });
+}, 
+
+
 
   asking: function() {
       
@@ -211,7 +202,6 @@ getAddExpenses: function() {
 };
 
 
-
 //замена кнопки рассчитать 
 
 let count = 0;
@@ -228,8 +218,6 @@ start.addEventListener('click', appData.start);
 
 
 
-
-
 btnExpenses.addEventListener('click', appData.addExpensesBlock);
 btnIncome.addEventListener('click', appData.addIncomeBlock);
 
@@ -243,7 +231,6 @@ let getTargetMonth = function() {
   return Math.ceil(targetAmount.value / accumulatedMonth);
    
 };
-
 
 
 
