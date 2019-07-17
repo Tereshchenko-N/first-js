@@ -83,8 +83,6 @@ showResult: function(){
   targetMonth.value = Math.ceil(appData.getTargetMonth());
   incomePeriod.value = appData.calcSavedMoney();
   incomeItem.value = appData.getIncome();
-  changeVal();
-  
 },
 
 addExpensesBlock: function() {
@@ -249,9 +247,6 @@ periodSelect.addEventListener('change', function ()  {
 });
 
 periodSelect.addEventListener('change', function () {
-  changeVal();
+  appData.calcSavedMoney();
 });
-let changeVal = function() {
-  return budgetMonth * periodSelect.value;
-};
 
