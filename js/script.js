@@ -28,10 +28,12 @@ let start = document.getElementById('start'),
   allIncomeTitle = document.querySelectorAll('.income-title'),
   allIncomeAmount = document.querySelectorAll('.income-amount'),
   allExpensesTitle = document.querySelectorAll('.expenses-title'),
-  allExpensesAmount = document.querySelectorAll('.expenses-amount');
+  allExpensesAmount = document.querySelectorAll('.expenses-amount'),
+  allInput = document.querySelectorAll('input[type=text]');
 
 
-console.log(allExpensesTitle);
+console.log(allInput);
+
 let appData = {
   income: [],
   addIncome: [],
@@ -55,19 +57,25 @@ let appData = {
     start.setAttribute('style', 'display: none');
     cancel.setAttribute('style', 'display: block');
     
-    salaryAmount.setAttribute('disabled', 'disabled');
-    incomeAmount.setAttribute('disabled', 'disabled');
-    additionalIncomeItem[0].setAttribute('disabled', 'disabled');
-    additionalIncomeItem[1].setAttribute('disabled', 'disabled');
-    expensesAmount.setAttribute('disabled', 'disabled');
-    additionalExpensesItem.setAttribute('disabled', 'disabled');
-    targetAmount.setAttribute('disabled', 'disabled');
-    expensesTitle.setAttribute('disabled', 'disabled');
-    incomeTitle.setAttribute('disabled', 'disabled');
-    allIncomeTitle.setAttribute('disabled', 'disabled');
-    allIncomeAmount.setAttribute('disabled', 'disabled');
-    allExpensesTitle.setAttribute('disabled', 'disabled');
-    allExpensesAmount.setAttribute('disabled', 'disabled');
+    // salaryAmount.setAttribute('disabled', 'disabled');
+    // incomeAmount.setAttribute('disabled', 'disabled');
+    // additionalIncomeItem[0].setAttribute('disabled', 'disabled');
+    // additionalIncomeItem[1].setAttribute('disabled', 'disabled');
+    // expensesAmount.setAttribute('disabled', 'disabled');
+    // additionalExpensesItem.setAttribute('disabled', 'disabled');
+    // targetAmount.setAttribute('disabled', 'disabled');
+    // expensesTitle.setAttribute('disabled', 'disabled');
+    // incomeTitle.setAttribute('disabled', 'disabled');
+    // allIncomeTitle.setAttribute('disabled', 'disabled');
+    // allIncomeAmount.setAttribute('disabled', 'disabled');
+    // allExpensesTitle.setAttribute('disabled', 'disabled');
+    // allExpensesAmount.setAttribute('disabled', 'disabled');
+
+    allInput = document.querySelectorAll('input[type=text]');
+
+    allInput.forEach((item) => {
+      item.setAttribute('disabled', 'disabled');
+    });
 
     appData.budget = +salaryAmount.value;
 
