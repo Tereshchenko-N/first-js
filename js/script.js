@@ -24,9 +24,14 @@ let start = document.getElementById('start'),
   periodSelect = document.querySelector('.period-select'),
   incomeItem = document.querySelectorAll('.income-items'),
   periodAmount = document.querySelector('.period-amount'),
-  expensesAmount = document.querySelector('.expenses-amount');
- 
+  expensesAmount = document.querySelector('.expenses-amount'),
+  allIncomeTitle = document.querySelectorAll('.income-title'),
+  allIncomeAmount = document.querySelectorAll('.income-amount'),
+  allExpensesTitle = document.querySelectorAll('.expenses-title'),
+  allExpensesAmount = document.querySelectorAll('.expenses-amount');
 
+
+console.log(allExpensesTitle);
 let appData = {
   income: [],
   addIncome: [],
@@ -59,7 +64,11 @@ let appData = {
     targetAmount.setAttribute('disabled', 'disabled');
     expensesTitle.setAttribute('disabled', 'disabled');
     incomeTitle.setAttribute('disabled', 'disabled');
-    
+    allIncomeTitle.setAttribute('disabled', 'disabled');
+    allIncomeAmount.setAttribute('disabled', 'disabled');
+    allExpensesTitle.setAttribute('disabled', 'disabled');
+    allExpensesAmount.setAttribute('disabled', 'disabled');
+
     appData.budget = +salaryAmount.value;
 
 
@@ -247,6 +256,6 @@ periodSelect.addEventListener('change', function ()  {
 });
 
 periodSelect.addEventListener('change', function () {
-  appData.calcSavedMoney();
+  incomePeriod.value = appData.calcSavedMoney();
 });
 
