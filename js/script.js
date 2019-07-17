@@ -83,6 +83,8 @@ showResult: function(){
   targetMonth.value = Math.ceil(appData.getTargetMonth());
   incomePeriod.value = appData.calcSavedMoney();
   incomeItem.value = appData.getIncome();
+  changeVal();
+  
 },
 
 addExpensesBlock: function() {
@@ -229,8 +231,6 @@ let getTargetMonth = function() {
    
 };
 
-
-
 // if (getTargetMonth() >= 0){
 //   console.log('Срок достижения цели: ', getTargetMonth(), 'месяца');
 // } else if (getTargetMonth() <= -1) {
@@ -240,3 +240,18 @@ let getTargetMonth = function() {
 let moneyforPeriod = function() {
    return appData.getBudget() * budgetPeriod();
 };
+
+
+//настройка ползунка 
+
+periodSelect.addEventListener('change', function ()  {
+  periodAmount.innerHTML = periodSelect.value;
+});
+
+periodSelect.addEventListener('change', function () {
+  changeVal();
+});
+let changeVal = function() {
+  return budgetMonth * periodSelect.value;
+};
+
